@@ -1,6 +1,8 @@
-﻿using NetTopologySuite.Geometries;
+﻿using NetTopologySuite.Features;
+using NetTopologySuite.Geometries;
 using NetTopologySuite.IO.PortableShape;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace NetTopologySuite.IO.PortableShape.Tests.Functional
@@ -15,15 +17,19 @@ namespace NetTopologySuite.IO.PortableShape.Tests.Functional
 
             var header = reader.DbaseHeader;
 
+            var features = new List<IFeature>();
             while (reader.Read())
             {
-                Console.WriteLine(reader.Geometry);
+                var feature = reader.Feature;
 
-                for (var i = 0; i < header.Fields.Length; i++)
-                {
-                    Console.WriteLine(reader.GetValue(i));
-                }
+                features.Add(feature);
             }
+
+            var writer = new ShapefileDataWriter("temp.shp")
+            {
+                Header = header
+            };
+            writer.Write(features);
         }
     }
 }

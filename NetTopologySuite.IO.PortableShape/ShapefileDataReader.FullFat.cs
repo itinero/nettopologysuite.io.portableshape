@@ -1,4 +1,5 @@
 ﻿using GeoAPI.Geometries;
+using NetTopologySuite.Features;
 using NetTopologySuite.IO.PortableShape.Dbase;
 using System;
 using System.Collections;
@@ -77,7 +78,36 @@ namespace NetTopologySuite.IO.PortableShape
             return false;
         }
 
+        /// <summary>
+        /// Gets the attributes table representing the current row/geometry.
+        /// </summary>
+        public AttributesTable Attributes
+        {
+            get
+            {
+                var attributesTable = new AttributesTable();
+                for (var i = 1; i < this._dbaseFields.Length; i++)
+                {
+                    attributesTable.Add(this._dbaseFields[i].Name,
+                        this.GetValue(i));
+                }
+                return attributesTable;
+            }
+        }
 
+        /// <summary>
+        /// Gets the feature representing the current row/geometry.
+        /// </summary>
+        public Feature Feature
+        {
+            get
+            {
+                var attributes = this.Attributes;
+                var geometry = this.Geometry;
+
+                return new Feature(geometry, attributes);
+            }
+        }
 
         /// <summary>
         /// Advances the IDataReader to the next record.
@@ -114,7 +144,6 @@ namespace NetTopologySuite.IO.PortableShape
 
             return _moreRecords; // moreDbfRecords && moreShpRecords;
         }
-
 
         ///// <summary>
         ///// Returns a DataTable that describes the column metadata of the IDataReader.
