@@ -1,15 +1,16 @@
 ﻿using NetTopologySuite.Geometries;
 using NetTopologySuite.IO.PortableShape;
 using System;
+using System.IO;
 
-namespace ConsoleApp1
+namespace NetTopologySuite.IO.PortableShape.Tests.Functional
 {
     class Program
     {
         static void Main(string[] args)
         {
             var geometryFactory = new GeometryFactory();
-            var reader = new ShapefileDataReader(@"C:\work\osmbe\road-completion-data\Wegenregister_SHAPE_20170323\Shapefile\Wegknoop.shp",
+            var reader = new ShapefileDataReader(Path.Combine("..", "data", "refpunt.shp"),
                 geometryFactory);
 
             var header = reader.DbaseHeader;
