@@ -4,6 +4,7 @@
     <TargetFramework>netstandard1.3</TargetFramework>
     <Version>0.0.1-pre001</Version>
     <Description>A package to read/write shapefiles in netstandard without any other dependencies other than NTS itself.</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/itinero/nettopologysuite.io.portableshape/master/logo.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
