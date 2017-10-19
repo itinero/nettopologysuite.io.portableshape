@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
+    <Version>0.0.1</Version>
+    <Description>A package to read/write shapefiles in netstandard without any other dependencies other than NTS itself.</Description>
   </PropertyGroup>
 
   <ItemGroup>

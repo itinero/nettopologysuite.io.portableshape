@@ -1,0 +1,1 @@
+dotnet pack ./NetTopologySuite.IO.PortableShape/NetTopologySuite.IO.PortableShape.csproj --version-suffix pre-001
