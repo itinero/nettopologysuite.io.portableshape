@@ -27,7 +27,8 @@ namespace NetTopologySuite.IO.PortableShape.Handlers
 
         public override IEnumerable<MBRInfo> ReadMBRs(BigEndianBinaryReader reader)
         {
-            reader.Close();
+            // TODO: again, binary reader doesn't have close in netstandard1.6, why?
+            //reader.Close();
             return new MBRInfo[0];
         }
     }

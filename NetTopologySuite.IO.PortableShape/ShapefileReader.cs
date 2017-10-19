@@ -146,8 +146,6 @@ namespace NetTopologySuite.IO.PortableShape
                     }
                     catch (Exception ex)
                     {
-                        // actually we should remove this crap...
-                        Trace.WriteLine(ex.Message);
                         return false;
                     }
                     return true;

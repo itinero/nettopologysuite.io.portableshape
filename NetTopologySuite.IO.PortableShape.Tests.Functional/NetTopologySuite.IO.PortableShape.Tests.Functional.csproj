@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NetTopologySuite" Version="1.15.0-pre027" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NetTopologySuite.IO.PortableShape\NetTopologySuite.IO.PortableShape.csproj" />
   </ItemGroup>
 

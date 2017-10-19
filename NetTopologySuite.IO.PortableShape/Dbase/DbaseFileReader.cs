@@ -37,7 +37,7 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
         /// </summary>
         private partial class DbaseFileEnumerator : IEnumerator, IDisposable
         {
-            private ArrayList _arrayList;
+            private List<object> _arrayList;
             private readonly BinaryReader _dbfReader;
             protected string[] _fieldNames = null;
             private DbaseFileHeader _header;
@@ -113,9 +113,9 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
             ///     The read shapefile record,
             ///     or null if there are no more records.
             /// </returns>
-            private ArrayList Read()
+            private List<object> Read()
             {
-                ArrayList attrs = null;
+                List<object> attrs = null;
 
                 var foundRecord = false;
                 while (!foundRecord)
@@ -124,7 +124,7 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
                     var tempNumFields = _header.NumFields;
 
                     // storage for the actual values
-                    attrs = new ArrayList(tempNumFields);
+                    attrs = new List<object>(tempNumFields);
 
                     // read the deleted flag
                     var tempDeleted = _dbfReader.ReadChar();

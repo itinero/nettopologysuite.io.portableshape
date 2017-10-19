@@ -6,7 +6,6 @@ using System.Text;
 
 namespace NetTopologySuite.IO.PortableShape
 {
-
     public partial class ShapefileReader
     {
         /// <summary>

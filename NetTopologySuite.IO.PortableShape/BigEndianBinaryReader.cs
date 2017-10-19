@@ -60,5 +60,13 @@ namespace NetTopologySuite.IO.PortableShape
             Array.Reverse(byteArray);
             return BitConverter.ToDouble(byteArray, 0);
         }
+
+        /// <summary>
+        /// Closes this reader.
+        /// </summary>
+        public void Close()
+        {
+            // TODO: what todo here, not available in netstandard1.6 on streams, weird right!
+        }
     }
 }

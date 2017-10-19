@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace NetTopologySuite.IO.PortableShape.Streams
@@ -11,8 +12,7 @@ namespace NetTopologySuite.IO.PortableShape.Streams
     public class ShapefileStreamProviderRegistry : IStreamProviderRegistry //, IDisposable
     {
         private IStreamProvider _dataEncodingStream;
-
-#if FEATURE_FILE_IO
+        
         /// <summary>
         /// Creates an instance of this class
         /// </summary>
@@ -22,11 +22,7 @@ namespace NetTopologySuite.IO.PortableShape.Streams
         /// <param name="validateIndexPath">A value indicating that the shape index modified <paramref name="path"/> must be validated</param>
         public ShapefileStreamProviderRegistry(string path, bool validateShapePath = false, bool validateDataPath = false, bool validateIndexPath = false)
         {
-#if HAS_SYSTEM_STRING_ISNULLORWHITESPACE
             if (string.IsNullOrWhiteSpace(path))
-#else
-            if (string.IsNullOrEmpty(path) || path.All(Char.IsWhiteSpace))
-#endif
             {
                 throw new ArgumentNullException("path", "Path to shapefile can't be null, empty or whitespace");
             }
@@ -53,7 +49,6 @@ namespace NetTopologySuite.IO.PortableShape.Streams
             if (File.Exists(tmpPath))
                 SpatialIndexIndexStream = new FileStreamProvider(StreamTypes.SpatialIndexIndex, tmpPath);
         }
-#endif
 
         /// <summary>
         /// Creates an instance of this class

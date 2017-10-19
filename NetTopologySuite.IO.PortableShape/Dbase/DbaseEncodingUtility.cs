@@ -15,7 +15,7 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
         /// <summary>
         /// The default Encoding
         /// </summary>
-        public static Encoding DefaultEncoding { get; set; } = Encoding.Default;
+        public static Encoding DefaultEncoding { get; set; } = Encoding.UTF8;
 
         /// <summary>
         /// Association of language driver id (ldid) to encoding
@@ -98,8 +98,8 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
 
             // Add ANSI values 3 and 0x57 as system's default encoding, and 0 which means no encoding.
             AddLdidEncodingPair(0, Encoding.UTF8);
-            AddLdidEncodingPair(0x03, Encoding.Default);
-            AddLdidEncodingPair(0x57, Encoding.Default);
+            AddLdidEncodingPair(0x03, Encoding.UTF8);
+            AddLdidEncodingPair(0x57, Encoding.UTF8);
         }
         /*
         private static void AddLdidEncodingPair(byte ldid, int codePage)
@@ -157,16 +157,19 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
 
         private static void RegisterEncodings(object[][] ldidCodePagePairs)
         {
-            var tmp = new Dictionary<int, EncodingInfo>();
-            foreach (EncodingInfo ei in Encoding.GetEncodings())
-                tmp.Add(ei.CodePage, ei);
+            var tmp = new Dictionary<int, Encoding>();
+            tmp.Add(Encoding.ASCII.CodePage, Encoding.ASCII);
+            tmp.Add(Encoding.BigEndianUnicode.CodePage, Encoding.BigEndianUnicode);
+            tmp.Add(Encoding.Unicode.CodePage, Encoding.Unicode);
+            tmp.Add(Encoding.UTF32.CodePage, Encoding.UTF32);
+            tmp.Add(Encoding.UTF7.CodePage, Encoding.UTF7);
+            tmp.Add(Encoding.UTF8.CodePage, Encoding.UTF8);
 
             foreach (var ldidCodePagePair in ldidCodePagePairs)
             {
-                EncodingInfo ei;
-                if (tmp.TryGetValue((int)ldidCodePagePair[1], out ei))
+                Encoding enc;
+                if (tmp.TryGetValue((int)ldidCodePagePair[1], out enc))
                 {
-                    var enc = ei.GetEncoding();
                     AddLdidEncodingPair(Convert.ToByte(ldidCodePagePair[0]), enc);
                 }
                 else

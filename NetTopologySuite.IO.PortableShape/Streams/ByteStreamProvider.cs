@@ -24,7 +24,7 @@ namespace NetTopologySuite.IO.PortableShape.Streams
         /// <param name="encoding">An encoding to get the bytes.
         ///  If <value>null</value>, <see cref="Encoding.Default"/> is used</param>
         public ByteStreamProvider(string kind, string text, Encoding encoding = null)
-            : this(kind, (encoding ?? Encoding.Default).GetBytes(text), -1, true)
+            : this(kind, (encoding ?? Encoding.UTF8).GetBytes(text), -1, true)
         {
         }
 

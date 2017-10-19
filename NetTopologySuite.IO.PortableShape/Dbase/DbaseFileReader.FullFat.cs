@@ -27,7 +27,8 @@ namespace NetTopologySuite.IO.PortableShape.Dbase
             /// </summary>
             public void Dispose()
             {
-                _dbfReader.Close();
+                // TODO: again, binary reader doesn't have close in netstandard1.6, why?
+                //_dbfReader.Close();
             }
         }
 

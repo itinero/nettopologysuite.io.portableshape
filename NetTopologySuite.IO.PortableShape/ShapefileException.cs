@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace NetTopologySuite.IO.PortableShape
 {
     /// <summary>
     /// The exception that is thrown when a non-fatal application error occurs related to Topology functionality.
     /// </summary>
-    public class ShapefileException : ApplicationException
+    public class ShapefileException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the ShapefileException class.
@@ -18,14 +17,7 @@ namespace NetTopologySuite.IO.PortableShape
         /// </summary>
         /// <param name="message">A message that describes the error. </param>
         public ShapefileException(string message) : base(message) { }
-
-        /// <summary>
-        /// Initializes a new instance of the ApplicationException class with serialized data.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param>
-        /// <param name="context">The contextual information about the source or destination.</param>
-        public ShapefileException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-
+        
         /// <summary>
         /// Initializes a new instance of the ApplicationException class with a specified error message and a reference to the inner exception that is the cause of this exception.
         /// </summary>
