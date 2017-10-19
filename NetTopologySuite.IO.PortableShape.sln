@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTopologySuite.IO.PortableShape", "NetTopologySuite.IO.PortableShape\NetTopologySuite.IO.PortableShape.csproj", "{D2377148-FD4D-4707-A9A7-0A429DF4E76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTopologySuite.IO.PortableShape.Tests.Functional", "NetTopologySuite.IO.PortableShape.Tests.Functional\NetTopologySuite.IO.PortableShape.Tests.Functional.csproj", "{1E61A51C-6A8F-4433-A149-290EDC8FF990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTopologySuite.IO.Shape.Tests.Functional", "NetTopologySuite.IO.Shape.Tests.Functional\NetTopologySuite.IO.Shape.Tests.Functional.csproj", "{1BC5F0FD-88CD-4D3B-82A0-1D797CB97524}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2377148-FD4D-4707-A9A7-0A429DF4E76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2377148-FD4D-4707-A9A7-0A429DF4E76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2377148-FD4D-4707-A9A7-0A429DF4E76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2377148-FD4D-4707-A9A7-0A429DF4E76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E61A51C-6A8F-4433-A149-290EDC8FF990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E61A51C-6A8F-4433-A149-290EDC8FF990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E61A51C-6A8F-4433-A149-290EDC8FF990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E61A51C-6A8F-4433-A149-290EDC8FF990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC5F0FD-88CD-4D3B-82A0-1D797CB97524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC5F0FD-88CD-4D3B-82A0-1D797CB97524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC5F0FD-88CD-4D3B-82A0-1D797CB97524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC5F0FD-88CD-4D3B-82A0-1D797CB97524}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0BBC110-232F-4F7F-BD19-7842329C7881}
+	EndGlobalSection
+EndGlobal
