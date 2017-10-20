@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{A929591B-6
 		data\refpunt.shp = data\refpunt.shp
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTopologySuite.IO.Shape.Tests.Functional", "NetTopologySuite.IO.Shape.Tests.Functional\NetTopologySuite.IO.Shape.Tests.Functional.csproj", "{3F539EFB-9622-4F65-85C7-6EBE11FA1E16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5C6DAD53-A3B8-4CE8-8D6B-6F7221F91A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C6DAD53-A3B8-4CE8-8D6B-6F7221F91A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C6DAD53-A3B8-4CE8-8D6B-6F7221F91A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F539EFB-9622-4F65-85C7-6EBE11FA1E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F539EFB-9622-4F65-85C7-6EBE11FA1E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F539EFB-9622-4F65-85C7-6EBE11FA1E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F539EFB-9622-4F65-85C7-6EBE11FA1E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

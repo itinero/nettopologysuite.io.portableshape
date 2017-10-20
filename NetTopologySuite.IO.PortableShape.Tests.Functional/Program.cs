@@ -20,6 +20,13 @@ namespace NetTopologySuite.IO.PortableShape.Tests.Functional
             var features = new List<IFeature>();
             while (reader.Read())
             {
+                Console.WriteLine(reader.Geometry);
+
+                for (var i = 0; i < header.NumFields; i++)
+                {
+                    Console.WriteLine("{0} - {1}", header.Fields[i].Name, reader.GetValue(i + 1));
+                }
+
                 var feature = reader.Feature;
 
                 features.Add(feature);
